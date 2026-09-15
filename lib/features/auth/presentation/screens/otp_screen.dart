@@ -1,3 +1,4 @@
+import 'package:fix_my_device/features/main_layout/presentation/screens/main_nav_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
 
@@ -109,7 +110,11 @@ class _OTPScreenState extends State<OTPScreen> {
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 ),
                 onPressed: () {
-                  // الانتقال للشاشة الرئيسية بعد التحقق
+Navigator.pushAndRemoveUntil(
+  context,
+  MaterialPageRoute(builder: (_) => const MainNavScreen()),
+  (route) => false,
+);
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('تم تسجيل الدخول بنجاح')),
                   );
