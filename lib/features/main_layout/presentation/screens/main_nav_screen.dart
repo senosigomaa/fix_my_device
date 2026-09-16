@@ -1,3 +1,5 @@
+import 'package:fix_my_device/features/chat/presentation/screens/chat_screen.dart';
+import 'package:fix_my_device/features/orders/presentation/screens/my_orders_screen.dart';
 import 'package:fix_my_device/features/profile/presentation/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -15,8 +17,8 @@ class _MainNavScreenState extends State<MainNavScreen> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const Center(child: Text('قائمة طلباتي', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
-    const Center(child: Text('المحادثات المباشرة', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
+    const MyOrdersScreen(), // التبويب الثاني
+    const ChatScreen(), // التبويب الثالث
     const ProfileScreen(),
   ];
 
@@ -36,7 +38,10 @@ class _MainNavScreenState extends State<MainNavScreen> {
           backgroundColor: Colors.white,
           selectedItemColor: AppColors.primary,
           unselectedItemColor: AppColors.textSecondary,
-          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11),
+          selectedLabelStyle: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 11,
+          ),
           unselectedLabelStyle: const TextStyle(fontSize: 11),
           elevation: 0,
           items: const [
