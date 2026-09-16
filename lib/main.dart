@@ -13,7 +13,6 @@ class FixMyDeviceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 1. توليد TextTheme كامل مبني على خط Zain
     final zainTextTheme = GoogleFonts.zainTextTheme(
       ThemeData.light().textTheme,
     );
